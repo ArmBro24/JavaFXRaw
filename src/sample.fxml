@@ -7,14 +7,20 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx=controller="com.foo.HelloController" alignment="CENTER" spacing="20.0">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="HelloController" alignment="CENTER" spacing="20.0">
     <children>
-        <TextField fx:id="textField" maxWidth="100" />
-        <Label text="${textField.text}"/>
-        <Button text="+" onAction="controller.btAdd"/>
-        <Button text="-"/>
+        <TextField fx:id="tfNumber1" maxWidth="50" />
+        <Label text="${tfNumber1.text}"/>
+
+        <TextField fx:id="tfNumber2" maxWidth="50" />
+        <Label text="${tfNumber2.text}"/>
+
+        <Button text="+" fx:id="btAdd"/>
+        <Button text="-" fx:id="btSubtract"/>
         <Button text="*"/>
         <Button text="/"/>
+
+        <TextField fx:id="tfResult" maxWidth="80"/>
     </children>
 </VBox>
 

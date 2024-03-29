@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -9,7 +10,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.stage.Stage;
 
-public class HelloApplication2452 extends Application {
+public abstract class HelloApplication2452 extends Application {
     private TextField tfNumber1 = new TextField();
     private TextField tfNumber2 = new TextField();
     private TextField tfResult = new TextField();
@@ -23,18 +24,6 @@ public class HelloApplication2452 extends Application {
     }
 
 
-    public void add() {
-        tfResult.setText(String.valueOf(Double.parseDouble(tfNumber1.getText()) +
-                Double.parseDouble(tfNumber2.getText())));
-    }
-
-
-    public void subtract() {
-        tfResult.setText(String.valueOf(Double.parseDouble(tfNumber1.getText()) -
-                Double.parseDouble(tfNumber2.getText())));
-    }
-
-
     public void multiply() {
         tfResult.setText(String.valueOf(Double.parseDouble(tfNumber1.getText()) *
                 Double.parseDouble(tfNumber2.getText())));
@@ -44,4 +33,14 @@ public class HelloApplication2452 extends Application {
         tfResult.setText(String.valueOf(Double.parseDouble(tfNumber1.getText()) /
                 Double.parseDouble(tfNumber2.getText())));
     }
+
+    public abstract void add(ActionEvent actionEvent);
+
+    public abstract void subtract(ActionEvent actionEvent);
+
+    public abstract void setTfNumber1(ActionEvent actionEvent);
+
+    public abstract void setTfNumber2(ActionEvent actionEvent);
+
+    public abstract void setTfResult(ActionEvent actionEvent);
 }
