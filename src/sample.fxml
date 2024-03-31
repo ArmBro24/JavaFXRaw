@@ -2,7 +2,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -10,32 +9,24 @@
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="HelloController" alignment="CENTER" spacing="20.0">
     <children>
         <TextField fx:id="tfNumber1" maxWidth="50" />
-        <Label text="${tfNumber1.text}"/>
 
         <TextField fx:id="tfNumber2" maxWidth="50" />
-        <Label text="${tfNumber2.text}"/>
 
-        <Button text="+" fx:id="btAdd"/>
-        <Button text="-" fx:id="btSubtract"/>
-        <Button text="*"/>
-        <Button text="/"/>
+        <Label fx:id="sumLabel"/>
+
+        <HBox spacing="3" alignment="TOP_CENTER">
+            <Button text="+" fx:id="btAdd"/>
+            <Button text="-" fx:id="btSubtract"/>
+        </HBox>
+
+        <HBox spacing="3" alignment="TOP_CENTER">
+            <Button text="*" fx:id="btMultiply"/>
+            <Button text="/" fx:id="btDivide"/>
+        </HBox>
+
+        <Button text="=" fx:id="res"/>
+
 
         <TextField fx:id="tfResult" maxWidth="80"/>
     </children>
 </VBox>
-
-
-
-
-
-
-
-
-
-
-
-        <!--<AnchorPane prefHeight="372.0" prefWidth="503.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HelloController">
-        <Label layoutX="39.0" layoutY="49.0" prefHeight="17.0" prefWidth="344.0" text="Title" />
-        <TextField fx:id="tfTitle" layoutX="39.0" layoutY="78.0" prefHeight="25.0" prefWidth="410.0" />
-        <Button layoutX="115.0" layoutY="186.0" mnemonicParsing="false" onAction="#btAdd" prefHeight="109.0" prefWidth="209.0" text="add" />
-        </AnchorPane>-->
