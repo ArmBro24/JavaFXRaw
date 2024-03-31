@@ -8,6 +8,8 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="HelloController" alignment="CENTER" spacing="20.0">
     <children>
+        <Label text="WELCOME TO THE CALCULATOR" alignment="TOP_CENTER" fx:id="welcome"/>
+
         <TextField fx:id="tfNumber1" maxWidth="50" />
 
         <TextField fx:id="tfNumber2" maxWidth="50" />
@@ -28,5 +30,7 @@
 
 
         <TextField fx:id="tfResult" maxWidth="80"/>
+
+        <Button text="EXIT" fx:id="exit" maxWidth="Infinity" alignment="BOTTOM_CENTER" style="--block-text-color: red"/>
     </children>
 </VBox>

@@ -1,8 +1,10 @@
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class HelloController extends HelloApplication2452 {
 
@@ -18,10 +20,15 @@ public class HelloController extends HelloApplication2452 {
     @FXML
     private Label sumLabel;
 
+    @FXML
+    public Label welcome = new Label();
+
     private double stored;
 
     @FXML
     public void initialize() {
+        welcome.setTextFill(Color.BLUE);
+
         tfNumber1.textProperty().addListener((observable, oldValue, newValue) -> updateSumLabel());
         tfNumber2.textProperty().addListener((observable, oldValue, newValue) -> updateSumLabel());
 
@@ -36,13 +43,16 @@ public class HelloController extends HelloApplication2452 {
 
         res.setOnAction(this::calculateResult);
 
+        exit.setOnAction(this::btExit);
+        exit.setTextFill(Color.RED);
+        Font boldFont = Font.font(exit.getFont().getFamily(), FontWeight.BOLD, exit.getFont().getSize());
+        exit.setFont(boldFont);
+        exit.setStyle("-fx-background-color: black");
+
         updateSumLabel();
     }
 
     private void calculateResult(ActionEvent actionEvent){
-        double num1 = Double.parseDouble(tfNumber1.getText());
-        double num2 = Double.parseDouble((tfNumber2.getText()));
-
          if(actionEvent.getSource() == res) {
              tfResult.setText(String.valueOf(stored));
          }
@@ -87,6 +97,11 @@ public class HelloController extends HelloApplication2452 {
         double num1 = Double.parseDouble(tfNumber1.getText());
         double num2 = Double.parseDouble(tfNumber2.getText());
         stored = num1 / num2;
+    }
+
+    @Override
+    public void btExit(ActionEvent actionEvent){
+        System.exit(0);
     }
 
     @Override

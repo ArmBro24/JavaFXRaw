@@ -17,27 +17,5 @@ public class Main extends Application{
 
     public static void main(String[] args) {launch(args);}
 
-    /*Timeline timeline;
 
-    @FXML
-    HelloController HC;
-    FXMLLoader fxmlLoader;
-    private int counter=0;
-
-    public void StartCounter(String status)
-    {
-        HC = fxmlLoader.getController();
-        if(timeline==null) {
-            timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-                HC.getCmd().setText(String.valueOf(counter));
-                counter++;
-            }));
-            timeline.setCycleCount(Animation.INDEFINITE);
-        }else{
-            if(status=="stop")
-                timeline.stop();
-            else if(status=="start")
-                timeline.play();
-        }
-    }*/
 }
